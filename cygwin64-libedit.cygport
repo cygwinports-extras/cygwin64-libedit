@@ -1,0 +1,18 @@
+CROSS_HOST="x86_64-pc-cygwin"
+inherit cross
+
+NAME="cygwin64-libedit"
+VERSION=20120311
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="Editline library for Cygwin 64bit toolchain"
+DESCRIPTION="Libedit is an autotool- and libtoolized port of the NetBSD Editline
+library.  It provides generic line editing, history, and tokenization functions,
+similar to those found in GNU Readline."
+HOMEPAGE="http://www.thrysoee.dk/editline/"
+SRC_URI="http://www.thrysoee.dk/editline/libedit-${VERSION}-3.0.tar.gz"
+SRC_DIR="libedit-${VERSION}-3.0"
+PATCH_URI="01-cygwin.patch"
+
+CYGCONF_ARGS="--enable-widec"
+MAKEOPTS+=" man_MANS= EL_MAN_LINKS= "
